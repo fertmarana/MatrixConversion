@@ -115,3 +115,23 @@ def MidPointCirc(r,cx,cy,color):
 		pygame.display.flip()						#update display
 	
 	return(n_pixels)
+
+
+
+def ImplicitEquation(r,cx,cy,color):
+	ResetDisp()
+	global n_pixels
+	n_pixels = 0
+	SimetricCirclePoints(x, y, cx, cy, color)
+	x = r
+	y = 0
+	
+	while (y > x):
+
+		x = x + 1
+		y = int(math.sqrt(math.pow(radius, 2) - math.pow(x, 2)))
+		SimetricCirclePoints(x, y, cx, cy, color)
+
+		pygame.display.flip()	
+
+	return(n_pixels)			

@@ -1,7 +1,7 @@
 import csv
 import sys
 import time
-from circledraw import MidPointCirc,SphereCoordCirc
+from circledraw import MidPointCirc,SphereCoordCirc, ImplEqCirc
 
 NOTHING = -1
 EXIT = 0
@@ -60,19 +60,23 @@ def main():
 				print(":: invalid choice - expected integer between 0 to 3 ::")
 
 		# Start the circumference draw
-		start_t = time.time()
 		if(choice == EXIT):
 			break
 		elif (choice == MIDPOINTCONV):
 			method = "Middle Point Conversion"
+			start_t = time.time()
 			n_pixels = MidPointCirc(radius,x,y,(255,255,255))
+			end_t = time.time()
 		elif (choice == SPHERECOORD):
 			method = "Sphere Coordinates Transform"
+			start_t = time.time()
 			n_pixels = SphereCoordCirc(radius,x,y,(255,255,255))
+			end_t = time.time()
 		elif (choice == IMPLICITEQ):
 			method = "Implicit Equation Application"
-			print("IMPLOFT")
-		end_t = time.time()
+			start_t = time.time()
+			n_pixels = ImplEqCirc(radius,x,y,(255,255,255))
+			end_t = time.time()
 
 		# Printing the report
 		Report(n_pixels,float( end_t - start_t ),method)

@@ -1,0 +1,24 @@
+RADIUS = 5
+MP: mean time = 0.0070177293
+SP: mean time = 0.1598183346
+IE: mean time = 0.0067022157
+
+RADIUS = 50
+MP: mean time = 0.0382401252
+SP: mean time = 0.2421295166
+IE: mean time = 0.0368202567
+
+RADIUS = 100
+MP: mean time = 0.0699393678
+SP: mean time = 0.2554195023
+IE: mean time = 0.0744559693
+
+RADIUS = 150
+MP: mean time = 0.0956490493
+SP: mean time = 0.2808123732
+IE: mean time = 0.1101042414
+
+RADIUS = 200
+MP: mean time = 0.0956490493
+SP: mean time = 0.2808123732
+IE: mean time = 0.1101042414

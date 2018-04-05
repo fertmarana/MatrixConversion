@@ -4,7 +4,7 @@ import pygame
 pygame.init()
 
 #Set display configuration
-disp = pygame.display.set_mode((400,400))  #resolution
+disp = pygame.display.set_mode((401,401))  #resolution
 disp.fill((1,1,1))						   #background color
 
 myfont = pygame.font.SysFont("monospace", 15)
@@ -17,7 +17,7 @@ pygame.display.flip() 					   #update display
 n_pixels = 0
 
 def ResetDisp():
-	disp = pygame.display.set_mode((400,400))  #resolution
+	disp = pygame.display.set_mode((401,401))  #resolution
 	disp.fill((1,1,1))						   #background color
 
 	myfont = pygame.font.SysFont("monospace", 15)
@@ -57,6 +57,29 @@ def SimetricCirclePoints(x,y,offsetx,offsety,color):
 	
 	# Updating the display
 	pygame.display.flip()
+
+#Draw Circumference (Implicit Equation)
+def ImplEqCirc(r,cx,cy,color):
+	# Initializing globals
+	ResetDisp()
+	global n_pixels
+	n_pixels = 0
+
+	# Initializing the local variables
+	x = 0
+	y = r
+	
+	# Starting the drawn
+	SimetricCirclePoints(x, y, cx, cy, color)
+
+	# Fitting the drawn with Implicit Equation
+	while (y > x):
+		x = x + 1
+		y = int(math.sqrt(math.pow(r, 2) - math.pow(x, 2)))
+		SimetricCirclePoints(x, y, cx, cy, color)
+		pygame.display.flip()	
+
+	return(n_pixels)
 
 #Draw Circumference (Sphere Coordinates)
 def SphereCoordCirc(r,cx,cy,color):

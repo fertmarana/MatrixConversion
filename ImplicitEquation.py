@@ -1,4 +1,4 @@
-def ImplicitEquation ( radius, center ):
+def ImplicitEquation (x, y, color):
 
 
 

@@ -1,5 +1,6 @@
-from pygame import gfxdraw
 import pygame
+from pygame import gfxdraw
+
 pygame.init()
 
 #Set display configuration
